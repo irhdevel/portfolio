@@ -13,6 +13,14 @@ export async function getBlogs() {
         appUid: env.NEWT_APPUID_BLOGS,
         modelUid: env.NEWT_MODELUID_BLOGS_POSTS
     })
-    console.log(posts)
     return posts
+}
+
+export async function getArticle(contentId: string) {
+    const content = await client.getContent({
+        appUid: env.NEWT_APPUID_BLOGS,
+        modelUid: env.NEWT_MODELUID_BLOGS_POSTS,
+        contentId: contentId
+    })
+    return content
 }

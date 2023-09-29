@@ -1,0 +1,30 @@
+.articleRoot {
+    width: 700px;
+    margin-top: 5rem;
+    font-feature-settings: 'pwid';
+    color: #333;
+}
+.articleRoot p {
+    margin-bottom: 0.8rem;
+    line-height: 1.8rem;
+    font-size: .9rem;
+}
+.articleRoot img {
+    border-radius: 6px;
+    margin: 2rem 0px;
+}
+.articleRoot table *{
+    border: solid 1px #eaeaea;
+    padding: 10px 15px;
+}
+.articleRoot table {
+    width: 100%;
+}
+.articleRoot h2 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 1.4rem;
+}
+.articleRoot ul li:before {
+    content: "― ";
+}

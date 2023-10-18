@@ -1,5 +1,6 @@
 .articleRoot {
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     margin-top: 5rem;
     font-feature-settings: 'pwid';
     color: #333;
@@ -27,4 +28,10 @@
 }
 .articleRoot ul li:before {
     content: "― ";
+}
+@media screen and (max-width: 800px) {
+    .articleRoot {
+        margin: 0 50px;
+        margin-top: 5rem;
+    }
 }

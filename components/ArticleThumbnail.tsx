@@ -1,9 +1,8 @@
 import Link from "next/link"
 
 export function ArticleThumbnail({article, href}: {article: any, href: string}){
-    console.log(article.coverImage)
     return(
-        <Link href={href} className="active:opacity-90 max-w-sm flex flex-col bg-neutral-200 rounded overflow-hidden">
+        <Link href={href} className="w-72 active:bg-neutral-300 active:text-neutral-700 max-w-sm flex flex-col bg-neutral-200 rounded overflow-hidden">
             {
                 article.coverImage ?
                     <img className="aspect-video object-cover" src={article.coverImage.src} alt="" />

@@ -17,7 +17,6 @@ export async function ArticlePage({ articleData }: {articleData: any}) {
                             if (domNode.type == "tag" && domNode.name == "code"){
                                 const elem = domNode as any
                                 const code = elem.children[0].data
-                                console.log(code)
                                 let lang: string = "css"
                                 if (elem.attribs.class) {
                                     lang = elem.attribs.class.toString().replace("language-", "")

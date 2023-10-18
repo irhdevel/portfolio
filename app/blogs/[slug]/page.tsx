@@ -7,14 +7,14 @@ import "remixicon/fonts/remixicon.css"
 export async function generateStaticParams() {
 
     let blogs = await getBlogs()
-    let ids: string[] = []
+    let slugs: {slug: string}[] = []
     blogs.items.forEach((blog: any)=>{
-        ids.push(blog._id)
+        slugs.push({slug: blog._id})
     })
-    return ids
+    return slugs 
 }
 
-export default async function BlogPage({params}: {params: any}) {
+export default async function BlogPage({params}: {params: {slug: string}}) {
     const article: any = await getArticle(params.slug)
     return(
         <div>

@@ -26,8 +26,8 @@ export default async function BlogPage({params}: {params: any}) {
                 }
                 <div className="relative">
                     <div className="flex justify-center items-center w-full py-16">
-                        <div className="flex flex-col gap-y-10 w-full h-fit mx-16">
-                            <div>
+                        <div className="flex flex-col gap-y-10 w-full h-fit mx-3 md:mx-16">
+                            <div className="mx-4 lg:mx-0">
                                 <h1 className="w-fit text-5xl font-semibold mb-1">
                                     {article.articleTitle}
                                 </h1>

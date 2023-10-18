@@ -31,7 +31,7 @@
 }
 @media screen and (max-width: 800px) {
     .articleRoot {
-        margin: 0 50px;
-        margin-top: 5rem;
+        padding: 0 50px;
+        margin-top: 1rem;
     }
 }

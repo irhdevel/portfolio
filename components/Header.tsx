@@ -23,10 +23,16 @@ export function Header(
             h-16 dark:bg-neutral-950/80 dark:border-b-gray-700/80
             border-b flex items-center justify-around
             bg-neutral-100/80 border-b-gray-400/80 fixed w-full backdrop-blur backdrop-saturate-150 z-50">
-            <Link href="/">
-                <span className="tracking-wide text-xl">
-                    IRIHI
-                </span>
+            <Link 
+                href="/" 
+                className="
+                flex justify-center items-center
+                gap-2 hover:opacity-70 transition
+                ease-out active:opacity-0">
+                {darkState ?
+                    <img src="/irihi_logodark.webp" alt="Irihi Logo" className="h-4" />
+                :   <img src="/irihi_logolight.webp" alt="Irihi Logo" className="h-4" />
+                }
             </Link>
             <nav className="w-fit h-fit">
                 <div className="w-fit h-fit hover:scale-125 active:scale-90 transition ease-out cursor-pointer">

@@ -30,6 +30,10 @@
 .articleRoot ul li:before {
     content: "― ";
 }
+.articleRoot blockquote {
+    border-left: solid 1px #797979;
+    padding-left: 1.2rem;
+}
 @media screen and (max-width: 800px) {
     .articleRoot {
         padding: 0 50px;

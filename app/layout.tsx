@@ -8,7 +8,8 @@ export const metadata: Metadata = {
     description: "Irihi\'s Portfolio",
     verification: {
         google: "pSCseIhUeuRezlW0IRv1trmHrHajHPQPaI-n2uCcOX0"
-    }
+    },
+    metadataBase: new URL('https://irihi.pages.dev')
 }
 
 export default function RootLayout({

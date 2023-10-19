@@ -1,5 +1,6 @@
 import { getArticle, getBlogs } from "@/utils/api"
 import Link from "next/link"
+import { Metadata, ResolvingMetadata } from "next"
 import { ArticlePage } from "@/components/ArticlePage"
 import { ArticlePageHeaderImg } from "@/components/ArticlePageHeaderImg"
 import "remixicon/fonts/remixicon.css"
@@ -12,6 +13,14 @@ export async function generateStaticParams() {
         slugs.push({slug: blog._id})
     })
     return slugs 
+}
+
+export async function generateMetadata(
+    {params}: {params: {slug: string}}): Promise<Metadata> {
+    const article: any = await getArticle(params.slug)
+    return {
+        title: `${article.articleTitle} | IrihiBlog`
+    }
 }
 
 export default async function BlogPage({params}: {params: {slug: string}}) {

@@ -3,6 +3,11 @@ import { ArticleThumbnail } from "@/components/ArticleThumbnail";
 import Link from "next/link"
 import "remixicon/fonts/remixicon.css"
 import { LinkBtn } from "@/components/LinkBtn";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Irihi Blog"
+} 
 
 export default async function BlogPage(){
     const blogs = await getBlogs()

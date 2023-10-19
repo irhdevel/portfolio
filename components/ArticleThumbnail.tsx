@@ -13,7 +13,7 @@ export function ArticleThumbnail({article, href}: {article: any, href: string}){
             dark:active:text-neutral-100
             dark:bg-transparent rounded-none
             border-b border-l dark:border-neutral-500
-            border-neutral-400">
+            border-neutral-400 px-5 py-2">
             {
                 article.coverImage ?
                     <img className="aspect-video object-cover" src={article.coverImage.src} alt="" />

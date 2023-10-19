@@ -17,7 +17,7 @@ export async function generateStaticParams() {
 export default async function BlogPage({params}: {params: {slug: string}}) {
     const article: any = await getArticle(params.slug)
     return(
-        <div>
+        <div className="min-h-screen">
             <div className="relative">
                 {
                     article.coverImage ?

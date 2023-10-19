@@ -17,7 +17,7 @@ export async function generateStaticParams() {
 export default async function BlogPage({params}: {params: {slug: string}}) {
     const article: any = await getArticle(params.slug)
     return(
-        <div>
+        <div className="min-h-screen">
             <div className="relative">
                 {
                     article.coverImage ?
@@ -28,18 +28,31 @@ export default async function BlogPage({params}: {params: {slug: string}}) {
                     <div className="flex justify-center items-center w-full py-16">
                         <div className="flex flex-col gap-y-10 w-full h-fit mx-3 md:mx-16">
                             <div className="mx-4 lg:mx-0">
-                                <h1 className="w-fit text-5xl font-semibold mb-1">
+                                <h1 className="dark:text-neutral-100 w-fit text-5xl font-semibold mb-1">
                                     {article.articleTitle}
                                 </h1>
-                                <span className="flex mb-3 text-gray-600">DATE: {new Date(article._sys.createdAt).toLocaleString()}</span>
-                                <Link href="/blogs" className="w-fit hover:bg-neutral-200 active:bg-neutral-700 active:text-neutral-50">
+                                <span 
+                                    className="
+                                    flex mb-3 text-gray-600 
+                                    dark:text-gray-300">
+                                    DATE: {new Date(article._sys.createdAt).toLocaleString()}
+                                </span>
+                                <Link
+                                    href="/blogs"
+                                    className="
+                                    dark:text-neutral-100 w-fit
+                                    dark:active:bg-neutral-100
+                                    dark:hover:bg-neutral-700
+                                    hover:bg-neutral-200 
+                                    active:bg-neutral-700
+                                    active:text-neutral-50">
                                     <i className="ri-arrow-left-line"></i>
                                     BLOGS
                                 </Link>
                             </div>
                             {
                                 article.coverImage ?
-                                    <img src={article.coverImage.src} alt={article.coverImage.altText} className="w-full h-auto rounded-md" />
+                                    <img src={article.coverImage.src} alt={article.coverImage.altText} className="w-full h-auto rounded-md dark:border dark:border-neutral-700" />
                                     : null
                             }
                         </div>

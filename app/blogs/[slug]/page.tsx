@@ -1,6 +1,6 @@
 import { getArticle, getBlogs } from "@/utils/api"
 import Link from "next/link"
-import { Metadata, ResolvingMetadata } from "next"
+import { Metadata } from "next"
 import { ArticlePage } from "@/components/ArticlePage"
 import { ArticlePageHeaderImg } from "@/components/ArticlePageHeaderImg"
 import "remixicon/fonts/remixicon.css"
@@ -18,8 +18,22 @@ export async function generateStaticParams() {
 export async function generateMetadata(
     {params}: {params: {slug: string}}): Promise<Metadata> {
     const article: any = await getArticle(params.slug)
+    console.log(article)
     return {
-        title: `${article.articleTitle} | IrihiBlog`
+        title: `${article.articleTitle} | IrihiBlog`,
+        description: article.blogDescription ? article.blogDescription : "Irihiのブログ記事",
+        openGraph: {
+            images: article.coverImage ? [article.coverImage.src] : [],
+            title: `${article.articleTitle} | IrihiBlog`,
+            type: "article",
+            description: article.blogDescription ? article.blogDescription : "Irihiのブログ記事",
+            siteName: "Irihi",
+            url: `https://irihi.pages.dev/blogs/${params.slug}`
+        },
+        twitter: {
+            card: "summary_large_image",
+            site: "@irihidev"
+        },
     }
 }
 

@@ -4,10 +4,14 @@
     margin-top: 5rem;
     font-feature-settings: 'pwid';
     color: #333;
+    letter-spacing: .06rem;
+}
+.articleRoot iframe {
+    margin: 1.7rem 0;
 }
 .articleRoot p {
-    margin-bottom: 0.8rem;
-    line-height: 1.8rem;
+    margin-bottom: 3rem;
+    line-height: 2rem;
     font-size: .9rem;
 }
 .articleRoot img {
@@ -22,17 +26,58 @@
 .articleRoot table {
     width: 100%;
 }
+.articleRoot br {
+    margin-bottom: 1rem;
+}
 .articleRoot h2 {
     font-size: 1.6rem;
     font-weight: bold;
     margin-bottom: 1.4rem;
 }
+.articleRoot h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.4rem;
+}
+.articleRoot h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1.4rem;
+}
 .articleRoot ul li:before {
     content: "― ";
+}
+.articleRoot ul {
+    margin-bottom: 1.3rem;
+}
+.articleRoot a {
+    text-decoration: underline;
+    color: #007eee;
+}
+.articleRoot a:hover {
+    background: #007eee;
+    color: #ffffff;
+    text-decoration: none;
+}
+.articleRoot a:active {
+    background: transparent;
+    color: #007eee;
+    text-decoration: none;
+}
+:global(.dark) .articleRoot a {
+    color: #73b2ea;
+}
+:global(.dark) .articleRoot a:hover {
+    background: #73b2ea;
+    color: #ffffff;
+}
+:global(.dark) .articleRoot a:active {
+    color: #73b2ea;
+    background: transparent;
 }
 .articleRoot blockquote {
     border-left: solid 1px #797979;
     padding-left: 1.2rem;
+    margin: 2rem 0;
 }
 @media screen and (max-width: 800px) {
     .articleRoot {

@@ -1,10 +1,9 @@
 "use client"
 import { ReactNode, useState, useEffect } from "react"
 import clsx from "clsx"
-import { Figtree } from "next/font/google"
 import { Header } from "./Header"
-
-const figtree = Figtree({ subsets: ['latin'] })
+import { figtree, notoSans } from "@/utils/fonts"
+import { yakuHanJP } from "@/utils/fonts"
 
 export function RLayout({children}: {children: ReactNode}){
     const [isDark, setIsDark] = useState<boolean>(true)
@@ -28,13 +27,22 @@ export function RLayout({children}: {children: ReactNode}){
     },[])
 
     return(
-        <html lang="ja" className={clsx('transition',isDark ? "dark" : "","dark:bg-black bg-white")}>
+        <html lang="ja"
+            className={
+                clsx(
+                    'transition',
+                    isDark ? "dark" : "",
+                    "dark:bg-black bg-white",
+                    figtree.variable,
+                    notoSans.variable,
+                    yakuHanJP.variable
+                )}>
           <body 
                 className={
                     clsx(
-                        figtree.className,
                         "dark:bg-black dark:text-neutral-100"
-                    )}>
+                    )
+                }>
                 <Header setDarkState={setIsDark} darkState={isDark}></Header>
                 <div className="h-16"></div>
                 {children}

@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: var(--font-figtree), var(--font-yakuhan-jp), var(--font-notosans-jp);
+}

@@ -51,15 +51,18 @@ export const yakuHanJP = localFont({
         }
     ],
     variable: '--font-yakuhan-jp',
+    display: 'swap'
 })
 
 export const figtree = Figtree({
     subsets: ['latin'],
-    variable: '--font-figtree'
+    variable: '--font-figtree',
+    display: 'swap'
 })
 export const notoSans = Noto_Sans_JP({
     weight: 'variable',
     variable: '--font-notosans-jp',
     style: 'normal',
-    preload: false
+    preload: false,
+    display: 'swap'
 })

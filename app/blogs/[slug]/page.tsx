@@ -50,7 +50,7 @@ export default async function BlogPage({params}: {params: {slug: string}}) {
                     <div className="flex justify-center items-center w-full py-16">
                         <div className="flex flex-col gap-y-10 w-full h-fit mx-3 md:mx-16">
                             <div className="mx-4 lg:mx-0">
-                                <h1 className="dark:text-neutral-100 w-fit text-5xl font-semibold mb-1">
+                                <h1 className="leading-[3.3rem] dark:text-neutral-100 w-fit text-5xl font-semibold mb-1">
                                     {article.articleTitle}
                                 </h1>
                                 <span 

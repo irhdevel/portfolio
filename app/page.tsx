@@ -3,7 +3,7 @@ import { LinkBtn } from "@/components/LinkBtn"
 
 export default function Home() {
     return (
-        <main className="min-h-screen pl-16 pt-14 bg-neutral-100 m-8 mb-0 rounded-lg dark:bg-neutral-900">
+        <main className="min-h-screen px-7 py-6 lg:pl-16 lg:pt-14 bg-neutral-100 m-8 mb-0 rounded-lg dark:bg-neutral-900">
             <div className="">
                 <h1 className="text-9xl font-bold tracking-wide">Irihi</h1>
                 <LinkBtn

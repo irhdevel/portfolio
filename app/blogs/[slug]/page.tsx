@@ -18,13 +18,12 @@ export async function generateStaticParams() {
 export async function generateMetadata(
     {params}: {params: {slug: string}}): Promise<Metadata> {
     const article: any = await getArticle(params.slug)
-    console.log(article)
     return {
-        title: `${article.articleTitle} | IrihiBlog`,
+        title: `${article.articleTitle} | IrihiLog`,
         description: article.blogDescription ? article.blogDescription : "Irihiのブログ記事",
         openGraph: {
             images: article.coverImage ? [article.coverImage.src] : [],
-            title: `${article.articleTitle} | IrihiBlog`,
+            title: `${article.articleTitle} | IrihiLog`,
             type: "article",
             description: article.blogDescription ? article.blogDescription : "Irihiのブログ記事",
             siteName: "Irihi",

@@ -4,6 +4,7 @@ import clsx from "clsx"
 import { Header } from "./Header"
 import { figtree, notoSans } from "@/utils/fonts"
 import { yakuHanJP } from "@/utils/fonts"
+import { Footer } from "./Footer"
 
 export function RLayout({children}: {children: ReactNode}){
     const [isDark, setIsDark] = useState<boolean>(true)
@@ -46,6 +47,7 @@ export function RLayout({children}: {children: ReactNode}){
                 <Header setDarkState={setIsDark} darkState={isDark}></Header>
                 <div className="h-16"></div>
                 {children}
+                <Footer/>
             </body>
         </html>
     )

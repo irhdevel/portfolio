@@ -5,6 +5,7 @@ import { ArticlePage } from "@/components/ArticlePage"
 import { ArticlePageHeaderImg } from "@/components/ArticlePageHeaderImg"
 import { ShareButton } from "@/components/ShareButton"
 import "remixicon/fonts/remixicon.css"
+import { CoverImage } from "@/components/CoverImage"
 
 export async function generateStaticParams() {
 
@@ -75,7 +76,7 @@ export default async function BlogPage({params}: {params: {slug: string}}) {
                             </div>
                             {
                                 article.coverImage ?
-                                    <img src={article.coverImage.src} alt={article.coverImage.altText} className="w-full h-auto rounded-md dark:border dark:border-neutral-700" />
+                                    <CoverImage article={article}/>
                                     : null
                             }
                         </div>

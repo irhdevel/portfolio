@@ -19,6 +19,7 @@
         "clsx": "^2.0.0",
         "eslint": "8.49.0",
         "eslint-config-next": "13.4.19",
+        "framer-motion": "^10.16.4",
         "html-react-parser": "^4.2.2",
         "newt-client-js": "^3.2.6",
         "next": "13.4.19",

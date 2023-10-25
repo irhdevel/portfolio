@@ -5,6 +5,8 @@ import { Header } from "./Header"
 import { figtree, notoSans } from "@/utils/fonts"
 import { yakuHanJP } from "@/utils/fonts"
 import { Footer } from "./Footer"
+import { PageTransition } from "./PageTransition"
+
 
 export function RLayout({children}: {children: ReactNode}){
     const [isDark, setIsDark] = useState<boolean>(true)
@@ -38,16 +40,18 @@ export function RLayout({children}: {children: ReactNode}){
                     notoSans.variable,
                     yakuHanJP.variable
                 )}>
-          <body 
+            <body 
                 className={
                     clsx(
                         "dark:bg-black dark:text-neutral-100"
                     )
                 }>
-                <Header setDarkState={setIsDark} darkState={isDark}></Header>
-                <div className="h-16"></div>
-                {children}
-                <Footer/>
+                <PageTransition>
+                    <Header setDarkState={setIsDark} darkState={isDark}></Header>
+                    <div className="h-16"></div>
+                    {children}
+                    <Footer/>
+                </PageTransition>
             </body>
         </html>
     )

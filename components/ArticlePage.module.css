@@ -4,7 +4,7 @@
     margin-top: 5rem;
     font-feature-settings: 'pwid';
     color: #333;
-    letter-spacing: .06rem;
+    letter-spacing: .09rem;
 }
 .articleRoot iframe {
     margin: 1.7rem 0;
@@ -12,7 +12,7 @@
 .articleRoot p {
     margin-bottom: 3rem;
     line-height: 2rem;
-    font-size: .9rem;
+    font-size: 1rem;
 }
 .articleRoot img {
     border-radius: 6px;
@@ -27,7 +27,7 @@
     width: 100%;
 }
 .articleRoot br {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 .articleRoot h2 {
     font-size: 1.6rem;
@@ -87,7 +87,7 @@
 }
 
 :global(.dark) .articleRoot {
-    color: #f5f5f5;
+    color: #d3d3d3;
 }
 
 :global(.dark) .articleRoot table *{

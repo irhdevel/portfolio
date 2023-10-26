@@ -11,7 +11,7 @@ export function CoverImage({article}: {article: any}) {
                 src={article.coverImage.src}
                 alt={article.coverImage.altText}
                 className="w-full h-auto rounded-md
-                dark:border dark:border-neutral-700" />
+                dark:border dark:border-neutral-700 max-w-[1500px] mx-auto" />
         </motion.div>
 
     )

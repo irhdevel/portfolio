@@ -58,8 +58,22 @@ export default async function BlogPage({params}: {params: {slug: string}}) {
                                 <span 
                                     className="
                                     flex mb-3 text-gray-600 
-                                    dark:text-gray-300">
-                                    DATE: {new Date(article._sys.createdAt).toLocaleString()}
+                                    dark:text-gray-300 gap-x-1">
+                                    <i className="ri-calendar-line"></i>
+                                    {
+                                        new Date(article._sys.createdAt)
+                                        .toLocaleString(
+                                            "ja-JP",
+                                            {
+                                                year: "numeric",
+                                                month: "numeric",
+                                                day: "numeric",
+                                                hour: "numeric",
+                                                hour12: false,
+                                                minute: "numeric"
+                                            }
+                                        )
+                                    }
                                 </span>
                                 <Link
                                     href="/blogs"

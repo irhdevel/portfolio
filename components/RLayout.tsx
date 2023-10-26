@@ -6,6 +6,8 @@ import { figtree, notoSans } from "@/utils/fonts"
 import { yakuHanJP } from "@/utils/fonts"
 import { Footer } from "./Footer"
 import { PageTransition } from "./PageTransition"
+import { LoadingModal } from "./LoadingModal"
+import { AppProgressBar } from "next-nprogress-bar"
 
 
 export function RLayout({children}: {children: ReactNode}){
@@ -28,6 +30,12 @@ export function RLayout({children}: {children: ReactNode}){
             setIsDark(mediaIsDark.matches)
         }
     },[])
+    const [isLoadingFinished, setIsLoadingFinished] = useState<boolean>(false)
+    useEffect(()=>{
+        setTimeout(()=>{
+            setIsLoadingFinished(true)
+        }, 1000)
+    })
 
     return(
         <html lang="ja"
@@ -52,6 +60,12 @@ export function RLayout({children}: {children: ReactNode}){
                     {children}
                     <Footer/>
                 </PageTransition>
+                {
+                    !isLoadingFinished ?
+                    <LoadingModal/>
+                    : null
+                }
+                <AppProgressBar color="#c98441" height="4px" />
             </body>
         </html>
     )

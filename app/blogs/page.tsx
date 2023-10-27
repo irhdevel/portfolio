@@ -1,8 +1,8 @@
 import { getBlogs } from "@/utils/api";
-import { ArticleThumbnail } from "@/components/ArticleThumbnail";
 import "remixicon/fonts/remixicon.css"
 import { LinkBtn } from "@/components/LinkBtn";
 import { Metadata } from "next";
+import { BlogCards } from "@/components/BlogCards";
 
 export const metadata: Metadata = {
     title: "IrihiLog - Irihi's Blog"
@@ -20,15 +20,7 @@ export default async function BlogPage(){
                 <h1 className="font-bold dark:text-neutral-100 text-neutral-800 text-6xl">IRIHILOG</h1>
             </div>
             <main className="w-full flex items-center justify-center">
-                <div className="grid gap-x-5 gap-y-9 lg:grid-cols-3 md:grid-cols-2">
-                    {
-                        blogs.items.map((content: any, index)=>{
-                            return (
-                                <ArticleThumbnail key={index} href={`/blogs/${content._id}`} article={content}/>
-                            )
-                        })
-                    }
-                </div>
+                <BlogCards blogs={blogs} />
             </main>
         </div>
     )

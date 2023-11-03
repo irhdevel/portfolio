@@ -19,10 +19,8 @@ export default function RootLayout({
         children: React.ReactNode
     }) {
     return (
-        <Suspense>
-            <RLayout>
-                {children}
-            </RLayout>
-        </Suspense>
+        <RLayout>
+            {children}
+        </RLayout>
     )
 }

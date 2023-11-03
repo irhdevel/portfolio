@@ -8,7 +8,7 @@ import 'prism-themes/themes/prism-coldark-dark.css'
 import { CodeBlock } from './CodeBlock'
 import { motion, cubicBezier } from 'framer-motion'
 
-export async function ArticlePage({ articleData }: {articleData: any}) {
+export function ArticlePage({ articleData }: {articleData: any}) {
     return(
         <motion.div
             className='w-full flex justify-center'

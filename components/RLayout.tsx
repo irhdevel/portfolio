@@ -8,6 +8,7 @@ import { Footer } from "./Footer"
 import { PageTransition } from "./PageTransition"
 import { LoadingModal } from "./LoadingModal"
 import { AppProgressBar } from "next-nprogress-bar"
+import { BreadCrumbs } from "./Breadcrumbs"
 
 
 export function RLayout({children}: {children: ReactNode}){
@@ -58,6 +59,7 @@ export function RLayout({children}: {children: ReactNode}){
                     <Header setDarkState={setIsDark} darkState={isDark}></Header>
                     <div className="h-16"></div>
                     {children}
+                    <BreadCrumbs />
                     <Footer/>
                 </PageTransition>
                 {

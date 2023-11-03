@@ -6,6 +6,8 @@ import { ArticlePageHeaderImg } from "@/components/ArticlePageHeaderImg"
 import { ShareButton } from "@/components/ShareButton"
 import "remixicon/fonts/remixicon.css"
 import { CoverImage } from "@/components/CoverImage"
+import { ReadingTime } from "@/components/ReadingTime"
+import { ArticleCreatedAt } from "@/components/articleCreatedAt"
 
 export async function generateStaticParams() {
 
@@ -55,26 +57,10 @@ export default async function BlogPage({params}: {params: {slug: string}}) {
                                 <h1 className="leading-[3.3rem] dark:text-neutral-100 w-fit text-5xl font-semibold mb-1">
                                     {article.articleTitle}
                                 </h1>
-                                <span 
-                                    className="
-                                    flex mb-3 text-gray-600 
-                                    dark:text-gray-300 gap-x-1">
-                                    <i className="ri-calendar-line"></i>
-                                    {
-                                        new Date(article._sys.createdAt)
-                                        .toLocaleString(
-                                            "ja-JP",
-                                            {
-                                                year: "numeric",
-                                                month: "numeric",
-                                                day: "numeric",
-                                                hour: "numeric",
-                                                hour12: false,
-                                                minute: "numeric"
-                                            }
-                                        )
-                                    }
-                                </span>
+                                <div className="mb-3">
+                                    <ArticleCreatedAt time={article._sys.createdAt}/>
+                                    <ReadingTime articleTextHTML={article.article} />
+                                </div>
                                 <Link
                                     href="/blogs"
                                     className="

@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { RLayout } from '@/components/RLayout'
+import { Suspense } from 'react'
 
 
 export const metadata: Metadata = {
@@ -18,8 +19,10 @@ export default function RootLayout({
         children: React.ReactNode
     }) {
     return (
-        <RLayout>
-            {children}
-        </RLayout>
+        <Suspense>
+            <RLayout>
+                {children}
+            </RLayout>
+        </Suspense>
     )
 }

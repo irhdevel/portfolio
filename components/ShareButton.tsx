@@ -35,7 +35,16 @@ export function ShareButton({provider, href, className}: ShareButtonProps) {
             break
     }
     return(
-        <a target="_blank" rel="nofollow noopener noreferrer" href={href} className={clsx(className, "dark:text-neutral-600 text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-400 block w-fit text-2xl")}>
+        <a
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            href={href}
+            className={
+                clsx(className,
+                    "dark:text-neutral-600 text-neutral-400 \
+                    hover:text-neutral-800 dark:hover:text-neutral-400 \
+                    block w-fit text-2xl active:scale-75 transition"
+                )}>
             <i className={clsx(providerInformation!.iconClassName, "block")}></i>
         </a>
     )

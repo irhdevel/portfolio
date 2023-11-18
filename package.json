@@ -25,6 +25,7 @@
         "next": "14.0.1",
         "next-nprogress-bar": "^2.1.2",
         "next-sitemap": "^4.2.3",
+        "photoswipe": "^5.4.2",
         "postcss": "8.4.31",
         "prism-themes": "^1.9.0",
         "prismjs": "^1.29.0",

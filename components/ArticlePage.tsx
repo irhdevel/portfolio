@@ -7,8 +7,53 @@ import Prism from 'prismjs'
 import 'prism-themes/themes/prism-coldark-dark.css'
 import { CodeBlock } from './CodeBlock'
 import { motion, cubicBezier } from 'framer-motion'
+import "photoswipe/style.css"
+import { useEffect } from 'react'
+import PhotoSwipeLightbox from 'photoswipe/lightbox'
 
 export function ArticlePage({ articleData }: {articleData: any}) {
+    useEffect(()=>{
+        let lightbox: PhotoSwipeLightbox | null = new PhotoSwipeLightbox({
+            gallery: "#articleRoot",
+            children: "a",
+            pswpModule: () => import('photoswipe')
+
+        })
+        lightbox.init()
+        const galleryContainerQuery = "#articleRoot"
+        const galleryContainer = document.querySelectorAll(galleryContainerQuery)
+        galleryContainer.forEach((node) => {
+            console.log(node)
+            node.querySelectorAll(".pswpimg").forEach((elem/*, index_pswpimg*/)=>{
+                if (elem.classList.contains("pswpimg")){
+                    elem.childNodes.forEach((childnode) => {
+                        if (childnode.nodeName === "IMG"){
+                            const imgElem = (childnode as HTMLImageElement)
+                            console.log(imgElem)
+                            const { naturalWidth: width, naturalHeight: height } = imgElem
+                            var img = new Image()
+                            img.src = imgElem.src
+                            img.alt = imgElem.alt
+                            elem.setAttribute("data-pswp-width", width.toString())
+                            elem.setAttribute("data-pswp-height", height.toString())
+                            imgElem.remove()
+                            elem.appendChild(img)
+                            // if (index_pswpimg === 0 && elem.querySelectorAll("div.taptozoom_label").length === 0){
+                            //     var spanInfo = document.createElement("div")
+                            //     spanInfo.classList.add("taptozoom_label")
+                            //     spanInfo.appendChild(document.createTextNode("Tap to zoom"))
+                            //     elem.appendChild(spanInfo)
+                            // }
+                        } else return
+                    })
+                } else return
+            })
+        })
+        return () => {
+            lightbox?.destroy()
+            lightbox = null
+        }
+    },[])
     return(
         <motion.div
             className='w-full flex justify-center'
@@ -16,7 +61,8 @@ export function ArticlePage({ articleData }: {articleData: any}) {
             animate={{ translateY: "0px" }}
             transition={{ duration: 0.3, ease: [cubicBezier(0, 1, 0, 1), cubicBezier(1, 0.02, 1, 0.37)] }}>
             <div
-                className={clsx("articleRoot", style.articleRoot)}>
+                className={clsx("articleRoot", style.articleRoot)}
+                id="articleRoot">
                 {parse(articleData.article, {
                     replace: function (domNode: DOMNode) {
                         if (domNode instanceof Element){
@@ -30,6 +76,16 @@ export function ArticlePage({ articleData }: {articleData: any}) {
                                 let htmlCode = Prism.highlight(code, Prism.languages[lang], lang )
                                 return(
                                     <CodeBlock>{parse(htmlCode)}</CodeBlock>
+                                )
+                            } else if(domNode.type == "tag" && domNode.name == "img") {
+                                return (
+                                    <a
+                                        href={domNode.attribs.src}
+                                        target='_blank'
+                                        rel='noreferrer'
+                                        className='pswpimg'>
+                                        <img src={domNode.attribs.src} alt={domNode.attribs.alt} />
+                                    </a>
                                 )
                             } else {
                                 return

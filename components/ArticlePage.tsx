@@ -23,13 +23,11 @@ export function ArticlePage({ articleData }: {articleData: any}) {
         const galleryContainerQuery = "#articleRoot"
         const galleryContainer = document.querySelectorAll(galleryContainerQuery)
         galleryContainer.forEach((node) => {
-            console.log(node)
             node.querySelectorAll(".pswpimg").forEach((elem/*, index_pswpimg*/)=>{
                 if (elem.classList.contains("pswpimg")){
                     elem.childNodes.forEach((childnode) => {
                         if (childnode.nodeName === "IMG"){
                             const imgElem = (childnode as HTMLImageElement)
-                            console.log(imgElem)
                             const { naturalWidth: width, naturalHeight: height } = imgElem
                             var img = new Image()
                             img.src = imgElem.src

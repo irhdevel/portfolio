@@ -84,6 +84,9 @@
         padding: 0 20px;
         margin-top: 1rem;
     }
+    .articleRoot p {
+        font-size: 1rem;
+    }
 }
 
 :global(.dark) .articleRoot {

@@ -3,13 +3,15 @@ import style from './ArticlePage.module.css'
 import clsx from 'clsx'
 import parse, { DOMNode } from 'html-react-parser'
 import { Element } from 'html-react-parser'
-import Prism from 'prismjs'
-import 'prism-themes/themes/prism-coldark-dark.css'
-import { CodeBlock } from './CodeBlock'
 import { motion, cubicBezier } from 'framer-motion'
 import "photoswipe/style.css"
 import { useEffect } from 'react'
 import PhotoSwipeLightbox from 'photoswipe/lightbox'
+import dynamic from 'next/dynamic'
+
+const CodeBlock = dynamic(()=> import("./CodeBlock").then((mod)=> mod.CodeBlock),{
+    ssr: false,
+})
 
 export function ArticlePage({ articleData }: {articleData: any}) {
     useEffect(()=>{
@@ -66,14 +68,24 @@ export function ArticlePage({ articleData }: {articleData: any}) {
                         if (domNode instanceof Element){
                             if (domNode.type == "tag" && domNode.name == "code"){
                                 const elem = domNode as any
-                                const code = elem.children[0].data
-                                let lang: string = "css"
+                                const code: string = elem.children[0].data
+                                let lang: string = ""
+                                let filename: string = ""
+                                let hl_range: number[] = []
                                 if (elem.attribs.class) {
-                                    lang = elem.attribs.class.toString().replace("language-", "")
+                                    let classNames = elem.attribs.class.toString().split(":")
+                                    lang = classNames[0].replace("language-", "")
+                                    if (classNames[1]){
+                                        filename = classNames[1]
+                                    }
+                                    if (classNames[2]){
+                                        classNames[2].split("-").forEach((num: string)=>{
+                                            hl_range.push(Number(num))
+                                        })
+                                    }
                                 }
-                                let htmlCode = Prism.highlight(code, Prism.languages[lang], lang )
                                 return(
-                                    <CodeBlock>{parse(htmlCode)}</CodeBlock>
+                                    <CodeBlock code={code} lang={lang} filename={filename} hl_range={hl_range} />
                                 )
                             } else if(domNode.type == "tag" && domNode.name == "img") {
                                 return (

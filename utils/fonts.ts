@@ -1,5 +1,5 @@
 import localFont from 'next/font/local'
-import { Figtree } from 'next/font/google'
+import { Figtree, Fira_Code } from 'next/font/google'
 import { Noto_Sans_JP } from 'next/font/google'
 
 export const yakuHanJP = localFont({
@@ -64,5 +64,12 @@ export const notoSans = Noto_Sans_JP({
     variable: '--font-notosans-jp',
     style: 'normal',
     preload: false,
+    display: 'swap'
+})
+export const firaCode = Fira_Code({
+    subsets: ['latin'],
+    weight: 'variable',
+    variable: '--font-firacode',
+    style: 'normal',
     display: 'swap'
 })

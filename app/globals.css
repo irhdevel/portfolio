@@ -5,3 +5,31 @@
 body {
     font-family: var(--font-figtree), var(--font-yakuhan-jp), var(--font-notosans-jp);
 }
+code > pre * {
+    font-family: var(--font-firacode)!important;
+}
+pre.shiki {
+    background-color: transparent!important;
+}
+pre.shiki code {
+    counter-reset: step;
+    counter-increment: step 0;
+    display: grid;
+}
+
+pre.shiki code .line::before {
+    content: counter(step);
+    counter-increment: step;
+    width: 1rem;
+    margin-right: 1.5rem;
+    display: inline-block;
+    text-align: right;
+    color: #45475a;
+}
+pre.shiki code .line {
+    padding-left: 1.2rem;
+}
+pre.shiki code .line.hltd {
+    background: #26206d70;
+    border-left: solid 1px #7064ff;
+}

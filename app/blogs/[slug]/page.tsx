@@ -120,7 +120,7 @@ export default async function BlogPage({params}: {params: {slug: string}}) {
                 <aside className="mt-14 px-5 lg:px-16 xl:px-0 max-w-6xl mx-auto">
                     <h4 className="font-bold text-4xl">Related</h4>
                     <p className="text-neutral-600 dark:text-neutral-400">関連記事は<b>今後</b>実装されます...</p>
-                    <div className="overflow-x-scroll mt-4 flex gap-x-4 snap-mandatory snap-x">
+                    <div className="overflow-x-auto mt-4 flex gap-x-4 snap-mandatory snap-x">
                         <div className="snap-always snap-center w-64 flex-none h-36 bg-neutral-200 dark:bg-neutral-900 rounded-md"></div>
                         <div className="snap-always snap-center w-64 flex-none h-36 bg-neutral-100 dark:bg-neutral-950 rounded-md"></div>
                         <div className="snap-always snap-center w-64 flex-none h-36 bg-neutral-100/70 dark:bg-neutral-950/70 rounded-md"></div>

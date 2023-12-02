@@ -36,7 +36,7 @@ export function Header(
             </Link>
             <nav className="w-fit h-fit">
                 <div className="w-fit h-fit hover:scale-125 active:scale-90 transition ease-out cursor-pointer">
-                    <label htmlFor="darkModeCheckBox" className="p-3 cursor-pointer">
+                    <label htmlFor="darkModeCheckBox" className="cursor-pointer">
                         { darkState ? 
                         <i className="ri-moon-line"></i>
                         : <i className="ri-sun-line"></i>

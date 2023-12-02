@@ -46,8 +46,8 @@ export function CodeBlock({code, lang, filename, hl_range}: {code: string, lang:
     return(
         <div suppressHydrationWarning className='bg-[#121212] border mt-4 border-neutral-800 rounded-md'>
             { filename ?
-                <div suppressHydrationWarning className='bg-neutral-950 py-2 flex items-center justify-between'>
-                    <span className='px-4 tracking-normal border-l-2 border-[#957fb8]'>
+                <div suppressHydrationWarning className='bg-neutral-950 py-2 flex items-center justify-between border-b border-neutral-800'>
+                    <span className='px-4 tracking-normal border-l-2 border-[#957fb8] text-neutral-300'>
                         {filename}
                     </span>
                     <div 

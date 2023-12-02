@@ -67,7 +67,7 @@ export function RLayout({children}: {children: ReactNode}){
                     <LoadingModal/>
                     : null
                 }
-                <AppProgressBar color="#c98441" height="4px" />
+                <AppProgressBar color="#c98441" height="1px" />
             </body>
         </html>
     )

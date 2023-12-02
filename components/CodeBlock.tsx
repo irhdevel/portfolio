@@ -39,11 +39,8 @@ export function CodeBlock({code, lang, filename, hl_range}: {code: string, lang:
                     cblockRef.current?.querySelector(`span.line:nth-child(${range_tmp[0] + i})`)?.classList.add("hltd")
                 }
             }
-            Math.abs(hl_range[0]) //開始
-            Math.abs(hl_range[1]) //終了
         }
         highlight()
-        console.log("called!")
     },[code, lang, hl_range, cblockRef.current])
 
     return(

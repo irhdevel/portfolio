@@ -1,18 +1,18 @@
 .articleRoot {
-    width: 100%;
-    max-width: 700px;
-    margin-top: 5rem;
-    font-feature-settings: 'pwid';
-    color: #333;
-    letter-spacing: .09rem;
+   width: 100%;
+   max-width: 700px;
+   margin-top: 5rem;
+   font-feature-settings: 'pwid';
+   color: #333;
+   letter-spacing: .09rem;
 }
 .articleRoot iframe {
-    margin: 1.7rem 0;
+   margin: 1.7rem 0;
 }
 .articleRoot p {
-    margin-bottom: 3rem;
-    line-height: 2rem;
-    font-size: 1rem;
+   margin-bottom: 3rem;
+   line-height: 2rem;
+   font-size: 1rem;
 }
 .articleRoot img {
    border-radius: 6px;
@@ -27,75 +27,75 @@
    padding: 10px 15px;
 }
 .articleRoot table {
-    width: 100%;
+   width: 100%;
 }
 .articleRoot br {
-    margin-bottom: 1.5rem;
+   margin-bottom: 1.5rem;
 }
 .articleRoot h2 {
-    font-size: 1.6rem;
-    font-weight: bold;
-    margin-bottom: 1.4rem;
+   font-size: 1.6rem;
+   font-weight: bold;
+   margin-bottom: 1.4rem;
 }
 .articleRoot h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 1.4rem;
+   font-size: 1.3rem;
+   font-weight: 700;
+   margin-bottom: 1.4rem;
 }
 .articleRoot h4 {
-    font-size: 1.3rem;
-    margin-bottom: 1.4rem;
+   font-size: 1.3rem;
+   margin-bottom: 1.4rem;
 }
 .articleRoot ul li:before {
-    content: "― ";
+   content: "― ";
 }
 .articleRoot ul {
-    margin-bottom: 1.3rem;
+   margin-bottom: 1.3rem;
 }
 .articleRoot a {
-    text-decoration: underline;
-    color: #007eee;
+   text-decoration: underline;
+   color: #007eee;
 }
 .articleRoot a:hover {
-    background: #007eee;
-    color: #ffffff;
-    text-decoration: none;
+   background: #007eee;
+   color: #ffffff;
+   text-decoration: none;
 }
 .articleRoot a:active {
-    background: transparent;
-    color: #007eee;
-    text-decoration: none;
+   background: transparent;
+   color: #007eee;
+   text-decoration: none;
 }
 :global(.dark) .articleRoot a {
-    color: #73b2ea;
+   color: #73b2ea;
 }
 :global(.dark) .articleRoot a:hover {
-    background: #73b2ea;
-    color: #ffffff;
+   background: #73b2ea;
+   color: #ffffff;
 }
 :global(.dark) .articleRoot a:active {
-    color: #73b2ea;
-    background: transparent;
+   color: #73b2ea;
+   background: transparent;
 }
 .articleRoot blockquote {
-    border-left: solid 1px #797979;
-    padding-left: 1.2rem;
-    margin: 2rem 0;
+   border-left: solid 1px #797979;
+   padding-left: 1.2rem;
+   margin: 2rem 0;
 }
 @media screen and (max-width: 800px) {
-    .articleRoot {
-        padding: 0 20px;
-        margin-top: 1rem;
-    }
-    .articleRoot p {
-        font-size: 1rem;
-    }
+   .articleRoot {
+      padding: 0 20px;
+      margin-top: 1rem;
+   }
+   .articleRoot p {
+      font-size: 1rem;
+   }
 }
 
 :global(.dark) .articleRoot {
-    color: #d3d3d3;
+   color: #d3d3d3;
 }
 
 :global(.dark) .articleRoot table *{
-    border: solid 1px #4b4b4b;
+   border: solid 1px #4b4b4b;
 }

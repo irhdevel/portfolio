@@ -21,7 +21,7 @@ export function Header(
         <header
             className="
             h-16 dark:bg-neutral-950/80 dark:border-b-gray-700/80
-            border-b flex items-center justify-between px-12
+            border-b flex items-center justify-between px-12 top-0
             bg-neutral-100/80 border-b-gray-400/80 fixed w-full backdrop-blur backdrop-saturate-150 z-50">
             <Link 
                 href="/" 

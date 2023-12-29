@@ -1,23 +1,49 @@
 "use client"
 
 import { ArticleThumbnail } from "@/components/ArticleThumbnail";
-import { motion, cubicBezier } from "framer-motion"
+import { motion, cubicBezier, useAnimationControls } from "framer-motion"
+import { useEffect } from "react";
 
 export function BlogCards({blogs}: {blogs: any}) {
+    const controls = useAnimationControls()
+    const thumbAnimation = {
+        init: {
+         translateY: "120px",
+         opacity: 0.8
+      }
+   }
+   useEffect(()=>{
+      controls.start((i)=>({
+         translateY: [
+            "120px",
+            "0px"
+         ],
+         opacity: [0.8, 1],
+         transition: {
+            ease: [cubicBezier(0, 1, 0.5, 1)],
+            duration: 0.7,
+            delay: i * 0.04
+         }
+      })
+   )},[])
     return(
-        <motion.div
-            className="grid gap-x-5 gap-y-9 lg:grid-cols-3 md:grid-cols-2"
-            initial={{ translateY: "80px", opacity: 0.6 }}
-            animate={{ translateY: "0px", opacity: 1 }}
-            transition={{ duration: 0.2, ease: [cubicBezier(0, 1, 0.62, 1), cubicBezier(1, 0.02, 1, 0.37)] }}>
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-9 mx-9">
             {
                 blogs.items.map((content: any, index: number)=>{
                     return (
-                        <ArticleThumbnail key={index} href={`/blogs/${content._id}`} article={content}/>
+                        <motion.div
+                            key={index}
+                            initial="init"
+                            animate={controls}
+                            custom={index}
+                            variants={thumbAnimation}
+                        >
+                            <ArticleThumbnail href={`/blogs/${content._id}`} article={content}/>
+                        </motion.div>
                     )
                 })
             }
-        </motion.div>
+        </div>
 
     )
 }

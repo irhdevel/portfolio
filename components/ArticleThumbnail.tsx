@@ -5,9 +5,9 @@ export function ArticleThumbnail({article, href}: {article: any, href: string}){
         <Link 
             href={href}
             className="
-            w-80 active:bg-neutral-300
+            active:bg-neutral-300 h-full
             active:text-neutral-700
-            max-w-sm flex flex-col
+            max-w-lg mx-3 sm:mx-0 md:max-w-sm flex flex-col
             dark:bg-neutral-200 overflow-hidden
             dark:active:bg-neutral-600
             dark:active:text-neutral-100

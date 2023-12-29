@@ -17,9 +17,8 @@ export function ArticlePage({ articleData }: {articleData: any}) {
     useEffect(()=>{
         let lightbox: PhotoSwipeLightbox | null = new PhotoSwipeLightbox({
             gallery: "#articleRoot",
-            children: "a",
+            children: "a.pswpimg",
             pswpModule: () => import('photoswipe')
-
         })
         lightbox.init()
         const galleryContainerQuery = "#articleRoot"

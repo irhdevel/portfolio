@@ -1,0 +1,47 @@
+.heading2 {
+   font-weight: bold;
+   font-size: 1.7rem;
+   margin: 1.3rem 0;
+}
+.paragraph {
+   line-height: 2rem;
+   margin-bottom: 20px;
+}
+.root {
+   max-width: 700px;
+   margin: 0 auto;
+   margin-top: 100px;
+}
+
+.root a {
+   color: #0040ff;
+}
+
+:global(.dark) .root a {
+   color: rgb(147 197 253);
+}
+
+.root ul li {
+   list-style-type: disc;
+   margin-bottom: 10px;
+}
+.root ul {
+   margin: 30px 0;
+   padding-left: 30px;
+}
+@media screen and (max-width: 894px) {
+   .root {
+      padding: 0 20px;
+   }
+}
+
+@media screen and (max-width: 894px) {
+   .root h1 {
+      font-size: 2rem;
+   }
+}
+.root h3 {
+   font-size: 1.4rem;
+   margin: 40px 0;
+}
+

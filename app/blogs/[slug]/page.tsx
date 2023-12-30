@@ -57,34 +57,36 @@ export default async function BlogPage({params}: {params: {slug: string}}) {
                     : null
                 }
                 <main className="relative">
-                    <div className="flex justify-center items-center w-full py-16">
-                        <div className="flex flex-col gap-y-10 w-full h-fit mx-3 md:mx-16">
-                            <div className="mx-4 lg:mx-0">
-                                <h1 className="leading-[3.3rem] dark:text-neutral-100 w-fit text-5xl font-semibold mb-1">
-                                    {article.articleTitle}
-                                </h1>
-                                <div className="mb-3">
-                                    <ArticleCreatedAt time={article._sys.createdAt}/>
-                                    <ReadingTime articleTextHTML={article.article} />
+                    <div className="flex justify-center items-center w-full pt-24">
+                        <div className="flex flex-colw-full h-fit mx-3 md:mx-16 items-center justify-center">
+                            <div className="flex flex-col gap-y-12">
+                                <div className="mx-4 lg:mx-0">
+                                    <h1 className="max-w-[1000px] leading-[3.3rem] dark:text-neutral-100 w-full text-5xl font-semibold mb-1">
+                                        {article.articleTitle}
+                                    </h1>
+                                    <div className="mb-1">
+                                        <ArticleCreatedAt time={article._sys.createdAt}/>
+                                        <ReadingTime articleTextHTML={article.article} />
+                                    </div>
+                                    <Link
+                                        href="/blogs"
+                                        className="
+                                        dark:text-neutral-100 w-fit
+                                        dark:active:bg-neutral-100
+                                        dark:hover:bg-neutral-700
+                                        hover:bg-neutral-200
+                                        active:bg-neutral-700
+                                        active:text-neutral-50">
+                                        <i className="ri-arrow-left-line"></i>
+                                        BLOGS
+                                    </Link>
                                 </div>
-                                <Link
-                                    href="/blogs"
-                                    className="
-                                    dark:text-neutral-100 w-fit
-                                    dark:active:bg-neutral-100
-                                    dark:hover:bg-neutral-700
-                                    hover:bg-neutral-200 
-                                    active:bg-neutral-700
-                                    active:text-neutral-50">
-                                    <i className="ri-arrow-left-line"></i>
-                                    BLOGS
-                                </Link>
+                                {
+                                    article.coverImage ?
+                                        <CoverImage article={article}/>
+                                        : null
+                                }
                             </div>
-                            {
-                                article.coverImage ?
-                                    <CoverImage article={article}/>
-                                    : null
-                            }
                         </div>
                     </div>
                     <ArticlePage articleData={article} data-usercss="article-area" />

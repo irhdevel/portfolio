@@ -56,9 +56,9 @@ export function ArticlePage({ articleData }: {articleData: any}) {
     return(
         <motion.div
             className='w-full flex justify-center'
-            initial={{ translateY: "80px"}}
+            initial={{ translateY: "120px"}}
             animate={{ translateY: "0px" }}
-            transition={{ duration: 0.3, ease: [cubicBezier(0, 1, 0, 1), cubicBezier(1, 0.02, 1, 0.37)] }}>
+            transition={{ duration: 0.7, ease: [cubicBezier(0, 1, 0.5, 1)] }}>
             <div
                 className={clsx("articleRoot", style.articleRoot)}
                 id="articleRoot">

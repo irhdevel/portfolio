@@ -6,7 +6,7 @@ export function LoadingModal() {
             <motion.div className="
                 flex items-center justify-center
                 w-full h-full fixed top-0 bg-black/80
-                backdrop-blur"
+                backdrop-blur z-50"
                 initial={{ backdropFilter: "blur(8px)" }}
                 animate={{ backdropFilter: "blur(3px)"}}
                 exit={{ backdropFilter: "blur(0px)" }}>

@@ -1,7 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { RLayout } from '@/components/RLayout'
-import { Suspense } from 'react'
 
 
 export const metadata: Metadata = {
@@ -10,7 +9,13 @@ export const metadata: Metadata = {
     verification: {
         google: "pSCseIhUeuRezlW0IRv1trmHrHajHPQPaI-n2uCcOX0"
     },
-    metadataBase: new URL('https://irihi.pages.dev')
+    metadataBase: new URL('https://irihi.pages.dev'),
+    robots: {
+        index: true,
+        googleBot: {
+            index: true,
+        }
+    },
 }
 
 export default function RootLayout({

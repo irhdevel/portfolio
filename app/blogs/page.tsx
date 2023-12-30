@@ -5,7 +5,13 @@ import { Metadata } from "next";
 import { BlogCards } from "@/components/BlogCards";
 
 export const metadata: Metadata = {
-    title: "IrihiLog - Irihi's Blog"
+    title: "IrihiLog - Irihi's Blog",
+    robots: {
+        index: true,
+        googleBot: {
+            index: true,
+        }
+    },
 } 
 
 export default async function BlogPage(){

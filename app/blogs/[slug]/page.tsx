@@ -25,6 +25,12 @@ export async function generateMetadata(
     return {
         title: `${article.articleTitle} | IrihiLog`,
         description: article.blogDescription ? article.blogDescription : "Irihiのブログ記事",
+        robots: {
+            index: true,
+            googleBot: {
+                index: true,
+            }
+        },
         openGraph: {
             images: article.coverImage ? [article.coverImage.src] : [],
             title: `${article.articleTitle} | IrihiLog`,

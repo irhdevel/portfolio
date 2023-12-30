@@ -52,7 +52,7 @@ export function RLayout({children}: {children: ReactNode}){
             <body 
                 className={
                     clsx(
-                        "dark:bg-black dark:text-neutral-100"
+                        "dark:bg-neutral-900 dark:text-neutral-100"
                     )
                 }>
                 <PageTransition>

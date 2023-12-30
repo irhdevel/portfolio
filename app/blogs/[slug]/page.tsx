@@ -60,7 +60,7 @@ export default async function BlogPage({params}: {params: {slug: string}}) {
                     <div className="flex justify-center items-center w-full pt-24">
                         <div className="flex flex-colw-full h-fit mx-3 md:mx-16 items-center justify-center">
                             <div className="flex flex-col gap-y-12">
-                                <div className="mx-4 lg:mx-0">
+                                <div className="mx-4 lg:mx-0 xl:min-w-[750px]">
                                     <h1 className="max-w-[1000px] leading-[3.3rem] dark:text-neutral-100 w-full text-5xl font-semibold mb-1">
                                         {article.articleTitle}
                                     </h1>
@@ -129,9 +129,9 @@ export default async function BlogPage({params}: {params: {slug: string}}) {
                     <h4 className="font-bold text-4xl">Related</h4>
                     <p className="text-neutral-600 dark:text-neutral-400">関連記事は<b>今後</b>実装されます...</p>
                     <div className="overflow-x-auto mt-4 flex gap-x-4 snap-mandatory snap-x">
-                        <div className="snap-always snap-center w-64 flex-none h-36 bg-neutral-200 dark:bg-neutral-900 rounded-md"></div>
-                        <div className="snap-always snap-center w-64 flex-none h-36 bg-neutral-100 dark:bg-neutral-950 rounded-md"></div>
-                        <div className="snap-always snap-center w-64 flex-none h-36 bg-neutral-100/70 dark:bg-neutral-950/70 rounded-md"></div>
+                        <div className="snap-always snap-center w-64 flex-none h-36 bg-neutral-200 dark:bg-neutral-700/70 rounded-md"></div>
+                        <div className="snap-always snap-center w-64 flex-none h-36 bg-neutral-100 dark:bg-neutral-800/60 rounded-md"></div>
+                        <div className="snap-always snap-center w-64 flex-none h-36 bg-neutral-100/70 dark:bg-neutral-800/30 rounded-md"></div>
                     </div>
                 </aside>
                 <div className="h-14"></div>

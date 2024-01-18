@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export function Donate() {
    return(
-      <div className='relative h-fit max-w-[500px] mx-auto my-10 rounded-lg overflow-clip'>
+      <div className='relative h-fit max-w-[500px] mx-auto my-10 rounded-lg overflow-clip text-white'>
          <Image className='z-0' src="/bg-dnt.webp" alt='' width={1529} height={1080}/>
          <div className='p-7 sm:m-0 absolute top-0 z-10 w-full h-full flex items-center justify-center'>
             <div className='flex flex-col items-center'>

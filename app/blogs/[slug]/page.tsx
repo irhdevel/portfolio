@@ -9,6 +9,7 @@ import { CoverImage } from "@/components/CoverImage"
 import { ReadingTime } from "@/components/ReadingTime"
 import { ArticleCreatedAt } from "@/components/articleCreatedAt"
 import { Donate } from "@/components/donate"
+import { Feed } from "@/components/feed"
 
 export async function generateStaticParams() {
 
@@ -126,6 +127,7 @@ export default async function BlogPage({params}: {params: {slug: string}}) {
                         </div>
                     </div>
                     <Donate />
+                    <Feed />
                 </aside>
                 <aside className="mt-14 px-5 lg:px-16 xl:px-0 max-w-6xl mx-auto">
                     <h4 className="font-bold text-4xl">Related</h4>

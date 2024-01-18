@@ -33,6 +33,7 @@ export function ArticlePage({ articleData }: {articleData: any}) {
                             var img = new Image()
                             img.src = imgElem.src
                             img.alt = imgElem.alt
+                     // if this is 0, it needed more adjusting.
                             elem.setAttribute("data-pswp-width", width.toString())
                             elem.setAttribute("data-pswp-height", height.toString())
                             imgElem.remove()
